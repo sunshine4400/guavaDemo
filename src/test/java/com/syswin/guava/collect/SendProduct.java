@@ -2,10 +2,9 @@
  * @Title: SendProduct.java
  * @Package com.dangdang.pdl.api.business.model
  * @Description: 临时商品对象
- * @author suntaojs
+ * @author sunshine4400
  * @date 2016-8-8 16:52:22
- * @Copyright 当当信息技术有限公司 
- * @version V1.0 
+ * @version V1.0
 */
 package com.syswin.guava.collect;
 

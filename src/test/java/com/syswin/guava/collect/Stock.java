@@ -2,10 +2,7 @@
  * @Title: Stock.java 
  * @Package com.dangdang.pdl.api.data.proxy.model 
  * @Description: 库存信息  
- * @author jiangcheng 
- * @date 2016年6月7日 下午2:51:47  
- * @Copyright 当当信息技术有限公司 
- * @version V1.0 
+ * @version V1.0
 */
 package com.syswin.guava.collect;
 
@@ -13,10 +10,7 @@ import java.io.Serializable;
 
 /**
  * @ClassName: Stock 
- * @Description: 库存信息  
- * @author jiangcheng 
- * @date 2016年6月7日 下午2:51:47
- * @version V1.0   
+ * @version V1.0
  */
 public class Stock implements Serializable,Cloneable{
 	private static final long serialVersionUID = 5284315763056594542L;
