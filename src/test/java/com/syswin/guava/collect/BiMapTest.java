@@ -1,0 +1,28 @@
+package com.syswin.guava.collect;
+
+import junit.framework.TestCase;
+
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+
+public class BiMapTest extends TestCase{
+
+	public void test(){
+		BiMap<String,String> weekNameMap = HashBiMap.create();
+		weekNameMap.put("星期一","Monday");
+        weekNameMap.put("星期二","Tuesday");
+        weekNameMap.put("星期三","Wednesday");
+        weekNameMap.put("星期四","Thursday");
+        weekNameMap.put("星期五","Friday");
+        weekNameMap.put("星期六","Saturday");
+        weekNameMap.put("星期日","Sunday");
+        //英文名:Sunday
+        String englishName = weekNameMap.get("星期日");
+        //中文名：星期日
+        String chineseName =weekNameMap.inverse().get("Sunday");
+
+
+        System.out.println("星期日的英文名是" + weekNameMap.get("星期日"));
+        System.out.println("Sunday的中文是" + weekNameMap.inverse().get("Sunday"));
+	}
+}

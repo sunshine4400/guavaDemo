@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.syswin.guava.base.OptionalTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE!
+test1(com.syswin.guava.base.OptionalTest)  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:210)
+	at com.google.common.base.Optional.of(Optional.java:85)
+	at com.syswin.guava.base.OptionalTest.test1(OptionalTest.java:55)
+test2(com.syswin.guava.base.OptionalTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.IllegalStateException: Optional.get() cannot be called on an absent value
+	at com.google.common.base.Absent.get(Absent.java:47)
+	at com.syswin.guava.base.OptionalTest.test2(OptionalTest.java:61)
