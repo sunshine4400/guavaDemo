@@ -20,6 +20,7 @@ public class BiMapTest extends TestCase{
         String englishName = weekNameMap.get("星期日");
         //中文名：星期日
         String chineseName =weekNameMap.inverse().get("Sunday");
+         chineseName =weekNameMap.inverse().get("Sunday");
 
 
         System.out.println("星期日的英文名是" + weekNameMap.get("星期日"));
