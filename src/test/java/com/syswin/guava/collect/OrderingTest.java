@@ -1,12 +1,13 @@
 package com.syswin.guava.collect;
 
-import java.util.List;
-
-import junit.framework.TestCase;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
+import junit.framework.TestCase;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 public class OrderingTest extends TestCase{
 
@@ -65,7 +66,7 @@ public class OrderingTest extends TestCase{
         
         System.out.println("list:"+ list);
 
-        Ordering<String> naturalOrdering = Ordering.natural();        
+        Ordering<String> naturalOrdering = Ordering.natural();
         Ordering<Object> usingToStringOrdering = Ordering.usingToString();
         Ordering<Object> arbitraryOrdering = Ordering.arbitrary();
         
@@ -100,11 +101,11 @@ public class OrderingTest extends TestCase{
         list.add("eva");
         list.add("jhon");
         list.add("neron");
-        
+
         System.out.println("list:"+ list);
-        
+
         Ordering<String> naturalOrdering = Ordering.natural();
-        System.out.println("naturalOrdering:"+ naturalOrdering.sortedCopy(list));    
+        System.out.println("naturalOrdering:"+ naturalOrdering.sortedCopy(list));
 
         List<Integer> listReduce= Lists.newArrayList();
         for(int i=9;i>0;i--){
@@ -114,12 +115,14 @@ public class OrderingTest extends TestCase{
         List<Integer> listtest= Lists.newArrayList();
         listtest.add(1);
         listtest.add(1);
-        listtest.add(1);
         listtest.add(2);
+        listtest.add(2);
+        listtest.add(3);
+        listtest.add(2);
+        listtest.add(3);
         
         
         Ordering<Integer> naturalIntReduceOrdering = Ordering.natural();
-        
         System.out.println("listtest:"+ listtest);
         System.out.println(naturalIntReduceOrdering.isOrdered(listtest));
         System.out.println(naturalIntReduceOrdering.isStrictlyOrdered(listtest));
@@ -161,5 +164,21 @@ public class OrderingTest extends TestCase{
         System.out.println("nullsFirst list :"+ naturalOrdering.nullsFirst().sortedCopy(list));
         System.out.println("nullsLast list :"+ naturalOrdering.nullsLast().sortedCopy(list));
 	}
+
+    public void test5(){
+        List<Double> listtest= Lists.newArrayList();
+        listtest.add(1.2);
+        listtest.add(1d);
+        listtest.add(2.2);
+        listtest.add(2.1);
+        listtest.add(3.1);
+        listtest.add(1.2);
+        listtest.add(3.2);
+        List<Double> listWithoutDup = new ArrayList<Double>(new HashSet<Double>(listtest));
+        System.out.println(listWithoutDup.toString());
+        Ordering<Double> naturalOrdering = Ordering.natural();
+        listWithoutDup = naturalOrdering.sortedCopy(listWithoutDup);
+        int index = listWithoutDup.indexOf(9.2);
+    }
 }
 
