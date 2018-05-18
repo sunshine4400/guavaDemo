@@ -1,6 +1,9 @@
 package com.syswin.guava.base;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Maps;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -64,4 +67,28 @@ public class JoinerTest extends TestCase{
 		String listJoinResult = Joiner.on("*").join(list);
 		System.out.println(listJoinResult);
 	}
+
+	public void test4(){
+		//Map map = ImmutableMap.of("cubeName","11","modelName","22","limit","33","limit",null);
+
+		Map map = new HashMap();
+		map.put("cube",null);
+		map = Maps.filterEntries(map, new Predicate<Map.Entry<String, Object>>() {
+			public boolean apply(Map.Entry<String, Object> stringPersonEntry) {
+				return stringPersonEntry.getKey() != null && stringPersonEntry.getValue() != null;
+			}
+		});
+
+		String result = Joiner.on("&").withKeyValueSeparator("=").join(map);
+		System.out.println(result);
+	}
+
+	public void test5 (){
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("cubeName","cube001");
+		jsonObject.put("cubeDescData","123456");
+		System.out.println(jsonObject.toJSONString());
+	}
+
+
 }

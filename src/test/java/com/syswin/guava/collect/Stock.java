@@ -6,13 +6,12 @@
 */
 package com.syswin.guava.collect;
 
-import java.io.Serializable;
 
 /**
  * @ClassName: Stock 
  * @version V1.0
  */
-public class Stock implements Serializable,Cloneable{
+public class Stock implements Cloneable{
 	private static final long serialVersionUID = 5284315763056594542L;
 	private int storeId;//仓库编号
 	private int stock;//实物
