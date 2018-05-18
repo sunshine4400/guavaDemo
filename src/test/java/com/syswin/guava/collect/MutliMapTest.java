@@ -1,9 +1,9 @@
 package com.syswin.guava.collect;
 
-import com.google.common.collect.*;
-import junit.framework.TestCase;
+		import com.google.common.collect.*;
+		import junit.framework.TestCase;
 
-import java.util.*;
+		import java.util.*;
 
 public class MutliMapTest extends TestCase {
 
@@ -19,27 +19,27 @@ public class MutliMapTest extends TestCase {
 
 		// 获得multimap的size
 		int size = myMultimap.size();
-		System.out.println(size);  // 4 
+		System.out.println(size);  // 4
 
 		// 获得Fruits对应的所有的值
 		List<String> fruits = myMultimap.get("Fruits");
-		System.out.println(fruits); // [Bannana, Apple, Pear]  
+		System.out.println(fruits); // [Bannana, Apple, Pear]
 
 		Collection<String> vegetables = myMultimap.get("Vegetables");
-		System.out.println(vegetables); // [Carrot]  
+		System.out.println(vegetables); // [Carrot]
 
-		//遍历Mutlimap  
+		//遍历Mutlimap
 		for (String value : myMultimap.values()) {
 			System.out.println(value);
 		}
 
-		// Removing a single value  
+		// Removing a single value
 		myMultimap.remove("Fruits", "Pear");
-		System.out.println(myMultimap.get("Fruits")); // [Bannana, Pear]  
+		System.out.println(myMultimap.get("Fruits")); // [Bannana, Pear]
 
-		// Remove all values for a key  
+		// Remove all values for a key
 		myMultimap.removeAll("Fruits");
-		System.out.println(myMultimap.get("Fruits")); // [] (Empty Collection!) 
+		System.out.println(myMultimap.get("Fruits")); // [] (Empty Collection!)
 	}
 
 	public void test2() {
@@ -91,6 +91,9 @@ public class MutliMapTest extends TestCase {
 		boolean existKey = ddMultimap.containsKey("peihuo");
 		//是否存在value:false
 		boolean existValue = ddMultimap.containsValue("xietingfeng");
+		Set set = ddMultimap.keySet();
+		List list = new ArrayList(set);
+		System.out.println(list.toString());
 	}
 
 	public void test3(){
@@ -115,5 +118,12 @@ public class MutliMapTest extends TestCase {
 
 		boolean existValue2 = ddMultimap.containsValue(packageInfo1);
 		System.out.println(existValue2);
+	}
+
+	public void test4(){
+		double aa = 26;
+		double bb = 234;
+		double dd = aa/bb;
+		System.out.println(new Double(Math.round(0.7)).intValue());
 	}
 }

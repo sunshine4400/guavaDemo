@@ -81,10 +81,15 @@ public class FilesTest extends TestCase{
 	 * @throws IOException 
 	 */
 	public void test4() throws IOException{
-		File file = new File("e://svn.txt");
-		String content = Files.toString(file, Charsets.UTF_8);
-		System.out.println(content);
-		
+		try {
+			Boolean boo = new File("e://svn.txt").createNewFile();
+			//String content = Files.toString(file, Charsets.UTF_8);
+			System.out.println(boo);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+		}
+
 //		System.out.println(Files.readFirstLine(file, Charsets.UTF_8));
 	}
 	
