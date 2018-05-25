@@ -5,7 +5,7 @@ package com.sunshine.java8;
  * @Author: 孙涛
  * @Date: 2018-04-27 15:55
  **/
-public class Student {
+public class Student implements Comparable<Integer>{
 
   private  String firstName;
 
@@ -105,4 +105,12 @@ public class Student {
         System.out.println("The fee after discount: " + newFee);
     }
 
+    public static int sortbyScore(Student a , Student b){
+            return a.getScore().compareTo(b.getScore());
+    }
+
+    @Override
+    public int compareTo(Integer o) {
+        return 0;
+    }
 }
