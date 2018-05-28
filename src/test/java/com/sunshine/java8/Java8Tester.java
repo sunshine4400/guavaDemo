@@ -41,10 +41,10 @@ public class Java8Tester {
 
     interface GreetingService {
         void sayMessage(String message);
-        default void sayMessage1(String message){
-            System.out.println("yuyu,"+message);
-        };
-    }
+    default void sayMessage1(String message){
+        System.out.println("yuyu,"+message);
+    };
+}
 
     private int operate(int a, int b, MathOperation mathOperation){
         return mathOperation.operation(a, b);
