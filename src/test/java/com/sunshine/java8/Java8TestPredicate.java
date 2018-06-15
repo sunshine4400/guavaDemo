@@ -3,6 +3,7 @@ package com.sunshine.java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * @Description:
@@ -28,6 +29,12 @@ public class Java8TestPredicate {
         // 如果 n 大于 3 test 方法返回 true
         System.out.println("输出大于 3 的所有数字:");
         eval(list,n -> n > 3);
+        System.out.println("输出大于 5 的所有数字:");
+        List<Integer> returnList = conditionFilter(list,s -> s > 5);
+        returnList.forEach(System.out::println);
+
+        List<String> wordList = Arrays.asList("helloo","sunshine","dump","shift");
+        wordList.stream().filter(word -> word.length() > 5).map(word -> word.toUpperCase()).forEach(System.out::println);
 
     }
 
@@ -37,6 +44,8 @@ public class Java8TestPredicate {
                 System.out.println(n);
             }
         }
-
+    }
+    public static List<Integer> conditionFilter(List<Integer> list, Predicate<Integer> predicate){
+       return list.stream().filter(predicate).collect(Collectors.toList());
     }
 }

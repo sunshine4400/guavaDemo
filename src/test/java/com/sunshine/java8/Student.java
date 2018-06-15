@@ -37,11 +37,12 @@ public class Student implements Comparable<Integer>{
         this.grade = grade;
     }
 
-    public Student(String firstName, String lastName, String address, Integer score) {
+    public Student(String firstName, String lastName, String address, Integer score,Integer sex) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.score = score;
+        this.sex = sex;
     }
 
     public String getFirstName() {
