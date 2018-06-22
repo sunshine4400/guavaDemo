@@ -33,4 +33,8 @@ public class Apple {
     public void setWeoght(String weoght) {
         this.weoght = weoght;
     }
+
+    //public Apple(Integer id) {
+    //    this.id = id;
+    //}
 }
